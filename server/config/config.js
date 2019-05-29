@@ -9,6 +9,15 @@ process.env.PORT = process.env.PORT || 3000;
 // ============================
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
+// ============================
+//  Fecha de caducidad
+// ============================
+process.env.CADUCIDAD_TOKEN = 600*600*240*300;
+
+// ============================
+//  SEED de autenticacion
+// ============================
+process.env.SEED = process.env.SEED || 'este-es-el-seed-desarrollo';
 
 // ============================
 //  Base de datos
