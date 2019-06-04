@@ -3,9 +3,15 @@ require('./config/config');
 const express = require('express');
 const mongoose = require('mongoose');
 
+//Habilitar la carpeta Public
+const path = require ('path');
+
 const app = express();
 
 const bodyParser = require('body-parser');
+
+//Habilitar la carpeta Public
+app.use(express.static(path.resolve (__dirname, '../public')));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
