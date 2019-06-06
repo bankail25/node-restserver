@@ -9,17 +9,17 @@ const Usuario = require('../models/usuario');
 const app = express();
 
 
-app.get('/usuario', verificaToken, (req, res) => {
+app.get('/usuario', (req, res) => {
 
-    let desde = req.query.desde || 0;
-    desde = Number(desde);
+    //let desde = req.query.desde || 0;
+    //desde = Number(desde);
 
-    let limite = req.query.limite || 5;
-    limite = Number(limite);
+    //let limite = req.query.limite || 5;
+    //limite = Number(limite);
 
     Usuario.find({ estado: true }, 'nombre email role estado google img')
-        .skip(desde)
-        .limit(limite)
+        //.skip(desde)
+        //.limit(limite)
         .exec((err, usuarios) => {
 
             if (err) {
@@ -98,7 +98,7 @@ app.put('/usuario/:id',  [verificaToken, verificaAdmin_Role], (req, res) => {
             usuario: usuarioDB
         });
 
-    })
+    });
 
 });
 
